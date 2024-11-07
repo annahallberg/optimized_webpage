@@ -1,0 +1,279 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css);
+@font-face {
+   font-family: "Bar Sady";
+   src: url(fonts/bar_sady-regular.woff) format("woff"),
+      url(fonts/bar_sady-regular.woff2) format("woff2");
+}
+@font-face {
+   font-family: Lato;
+   src: url(fonts/lato.woff) format("woff"),
+      url(fonts/lato.woff2) format("woff2");
+}
+@font-face {
+   font-family: "Lato Bold";
+   src: url(fonts/lato-bold.woff) format("woff"),
+      url(fonts/lato-bold.woff2) format("woff2");
+   font-weight: 700;
+}
+
+/* ********************************************************************** */
+/* GLOBAL STYLES */
+/* ********************************************************************** */
+* {
+   box-sizing: border-box;
+   font-family: Lato, Verdana, Tahoma, sans-serif;
+}
+p {
+   font-size: 1.1rem;
+}
+.wrapper {
+   width: 1300px;
+   margin: 0 auto;
+}
+/* ********************************************************************** */
+/* HEADER STYLES */
+/* ********************************************************************** */
+.header {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+.header__logo {
+   width: 150px;
+   height: 150px;
+}
+.header__searchbar {
+   display: flex;
+   align-items: center;
+}
+.searchbar__input {
+   padding: 0.5rem;
+}
+.searchbar__search-icon {
+   width: 2rem;
+   height: auto;
+}
+.header__menucontainer-item {
+   display: inline;
+   list-style: none;
+}
+.header__menucontainer-link {
+   border-style: solid;
+   border-width: fit-content;
+   border-color: #fea405;
+   color: black;
+   text-decoration: none;
+   font-size: large;
+   padding: 0.7rem;
+   margin: 0rem 0.3rem;
+}
+.header__menucontainer-link:hover {
+   padding: 0.7rem;
+   margin: 0rem 0.3rem;
+   text-decoration: underline;
+   box-shadow: 0px 0px 8px #ee9803;
+}
+/* ********************************************************************** */
+/* HERO SECTION STYLES */
+/* ********************************************************************** */
+
+.herosection {
+   width: 100%;
+   height: 30rem;
+   background-image: url(images/oranges.webp);
+   background-size: cover;
+   background-position: center;
+   margin-bottom: 3rem;
+   display: flex;
+   justify-content: center;
+   align-items: end;
+}
+.herosection__name {
+   font-size: 6rem;
+   font-family: "Bar Sady", sans-serif;
+   letter-spacing: 0.5rem;
+}
+
+/* ********************************************************************** */
+/* MAIN CONTENT STYLES */
+/* ********************************************************************** */
+
+.main {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+.main__products {
+   box-shadow: 0px 0px 8px lightgray;
+   padding: 1rem;
+   margin: 1rem;
+}
+.product__image {
+   width: 200px;
+   height: auto;
+}
+.product__h2--center {
+   text-align: center;
+   margin: 0.6rem 0;
+}
+.product__price {
+   color: green;
+}
+
+/* ********************************************************************** */
+/* NEWSLETTER SECTION SYLES */
+/* ********************************************************************** */
+
+.main__newsletter {
+   background-color: #fea405;
+   padding: 2rem;
+   margin: 2rem;
+}
+.newsletter__text {
+   font-size: large;
+   padding: 1rem 10rem;
+   line-height: 1.5;
+}
+.newsletter__input {
+   padding: 0.7rem;
+   width: auto;
+}
+.newsletter__form {
+   display: flex;
+   justify-content: center;
+}
+.newsletter__h2--center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.newsletter__button {
+   padding: 0.6rem;
+   font-size: large;
+}
+
+/* ********************************************************************** */
+/* FOOTER STYLES*/
+/* ********************************************************************** */
+
+.footer {
+   background-color: #333333;
+   color: white;
+   padding: 2rem 3rem;
+   gap: 3rem;
+}
+.footer__grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-template-areas: "fs-1 fs-2 fs-3 fs-4";
+}
+.footer__section1 {
+   grid-area: fs-1;
+   line-height: 1.5;
+}
+.footer__section2 {
+   grid-area: fs-2;
+}
+.footer__section3 {
+   grid-area: fs-3;
+}
+.footer__section4 {
+   grid-area: fs-4;
+}
+.footer__contact-link--underlined {
+   color: white;
+}
+.footer__menucontainer-link {
+   color: white;
+}
+.footer__menucontainer-item {
+   padding-bottom: 0.7rem;
+}
+.footer__menucontainer {
+   list-style-position: inside;
+   padding-inline-start: 0;
+}
+.footer__socialmedia {
+   width: 3rem;
+   height: 3rem;
+   margin-right: 0.5rem;
+}
+
+/* ********************************************************************** */
+/* MEDIA QUERIES */
+/* ********************************************************************** */
+@media (max-width: 1320px) {
+   .wrapper {
+      width: 100%;
+   }
+}
+@media (max-width: 900px) {
+   .header {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 2rem;
+   }
+   .header__searchbar {
+      padding-bottom: 2rem;
+   }
+   .footer__grid {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: "fs-1 fs-2 fs-3" "fs-1 fs-4 fs-4";
+   }
+   .herosection {
+      height: 25rem;
+   }
+}
+@media (max-width: 710px) {
+   .herosection {
+      height: 20rem;
+   }
+   .newsletter__text {
+      padding: 1rem;
+   }
+   .footer__grid {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+         "fs-1 fs-1 fs-1"
+         "fs-2 fs-3 fs-4";
+      gap: 0;
+      row-gap: 2rem;
+   }
+   .footer__socialmedia {
+      width: 2rem;
+      height: 2rem;
+      margin: auto;
+   }
+}
+@media (max-width: 527px) {
+   .herosection__name {
+      font-size: 4rem;
+   }
+   .main__products {
+      width: 100%;
+      text-align: center;
+   }
+   .product__image {
+      width: 100%;
+      padding: 0 2rem;
+   }
+   .newsletter__button--large {
+      padding: 0.7rem 0;
+      font-size: medium;
+   }
+   .newsletter__input {
+      padding: 0.7rem 0;
+      width: auto;
+   }
+}
+@media print {
+   * {
+      font-family: Georgia, "Times New Roman", Times, serif;
+   }
+   .herosection,
+   .header__menucontainer,
+   .newsletter {
+      display: none;
+   }
+}
